@@ -1,5 +1,5 @@
 <?php
-include_once 'con.php';
+include_once 'conn.php';
 $sql = "SELECT * FROM districts";
 $result = $conn->query($sql);
 $districts = [];

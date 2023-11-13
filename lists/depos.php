@@ -74,7 +74,7 @@
 
 <?php
 
-include_once '../con.php';
+include_once '../conn.php';
 $sql = "SELECT depos.depo_name, districts.district_name , mills.mill_name
 FROM depos
 INNER JOIN districts ON depos.district_id = districts.id

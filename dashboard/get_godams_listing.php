@@ -1,5 +1,5 @@
 <?php
-include_once '../con.php';
+include_once '../conn.php';
 //   $sql = "SELECT t.godam_id, godam.godam_name,
 //       SUM(CASE WHEN DATE(t.date) = subq.max_date THEN t.receive ELSE 0 END) AS receive,
 //     SUM(CASE WHEN DATE(t.date) = subq.max_date THEN t.opening_balance ELSE 0 END) AS opening_balance,

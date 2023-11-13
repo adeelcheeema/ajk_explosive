@@ -1,5 +1,5 @@
 <?php
-include_once '../../con.php';
+include_once '../../conn.php';
 
 //     $sql_mill = "SELECT
 //     mill.mill_name AS mill_name,

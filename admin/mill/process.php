@@ -1,5 +1,5 @@
 <?php
-include_once '../con.php';
+include_once '../conn.php';
 date_default_timezone_set("Asia/Karachi");
 if ($_POST) {
     

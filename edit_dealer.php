@@ -78,7 +78,7 @@
 
 <?php
 
-include_once 'con.php';
+include_once 'conn.php';
 
 $dd = $_GET['dd'] ?? null;
 $dID = $_GET['dId'] ?? null;

@@ -1,5 +1,5 @@
 <?php session_start();
-include_once '../con.php';
+include_once '../conn.php';
 
 if(isset($_SESSION['portal_user_id'])) {
      header('Location: https://industries.ajk.gov.pk/explosive');

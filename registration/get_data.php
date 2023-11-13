@@ -1,5 +1,5 @@
 <?php
-include_once '../con.php';
+include_once '../conn.php';
 
 $depoId = $user_linked_id;
 

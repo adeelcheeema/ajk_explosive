@@ -31,7 +31,7 @@
 </head>
 
 <?php
-include_once '../con.php';
+include_once '../conn.php';
 
 $districtId = $_GET['dd'] ?? null;
 

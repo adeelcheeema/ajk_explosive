@@ -1,5 +1,5 @@
 <?php
-include_once '../con.php';
+include_once '../conn.php';
 $sql = "SELECT * FROM godams";
 $sql1 = "SELECT * FROM mills";
 $sql2 = "SELECT * FROM depos";
