@@ -109,9 +109,8 @@
         </div>
     </nav>
   <div class="container-fluid p-5">
-    <?php 
-    include_once('./admin/index.php')
-    ?>
+
+
   </div>
 
  <script src="https://www.gstatic.com/charts/loader.js"></script>
