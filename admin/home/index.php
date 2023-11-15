@@ -1,3 +1,4 @@
+<?php include('get_data.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -226,9 +227,6 @@
   </style>
 </head>
 
-<?php
-include('get_data.php');
-?>
 
 <body>
   <div class="container-fluid p-1">

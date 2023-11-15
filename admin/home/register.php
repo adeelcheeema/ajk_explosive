@@ -1,3 +1,4 @@
+<?php include('process.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,7 @@
     }
     </style>
 </head>
-<?php include('process.php'); ?>
+
 
 <body>
     <div class="container mt-5 mb-5">
