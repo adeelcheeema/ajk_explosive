@@ -15,6 +15,7 @@ if ($accept_id) {
 }
 else if($reject_id){
     $sql = "UPDATE licence SET is_noc = 2 WHERE id = $reject_id;";
+    header('Location: https://industries.ajk.gov.pk/explosive/admin/');
     if ($conn->query($sql) === TRUE) {
          echo '<script>alert("NOC Rejected");</script>';
     } else {
@@ -23,6 +24,5 @@ else if($reject_id){
    
 }
 
-header('Location: https://industries.ajk.gov.pk/explosive/admin/');
 $conn->close();
 ?>

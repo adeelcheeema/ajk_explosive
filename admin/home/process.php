@@ -23,11 +23,11 @@ if ($_POST) {
         '$company_reg','$project_name','$dept_name',
         '$quality_req','$address_loc','$project_loc' 
     )";
+    header('Location: https://industries.ajk.gov.pk/explosive/admin/');
     if ($conn->query($sql) === TRUE) {
         echo '<script>alert("Record inserted successfully!");</script>';
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    header('Location: https://industries.ajk.gov.pk/explosive/admin/');
 }
 $conn->close();
