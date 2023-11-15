@@ -52,16 +52,16 @@
     <?php 
 switch($user_role){
     case 'zone':
-        include('zone/index.php');
+        include('http://localhost/ajk_explosive/zone/index.php');
         break; 
     case 'godown':
-        include('godown/index.php');
+        include('http://localhost/ajk_explosive/godown/index.php');
         break;
     case 'home':
-        include('home/index.php');
+        include('http://localhost/ajk_explosive/home/index.php');
         break;
     case 'explosive':
-        include('explosive/index.php');
+        include('http://localhost/ajk_explosive/explosive/index.php');
         break;
     default:
         header('Location: http://localhost/ajk_explosive/');
