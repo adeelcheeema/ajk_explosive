@@ -9,7 +9,7 @@ $user_name = $_SESSION['name'];
 $user_linked_id = $_SESSION['linked_id'];
 $user_role_id = $_SESSION['user_role'];
 
-$role = ['super-admin','admin','zone','godown','home','explosive'];
+$role = ['super-admin','admin','zone','dc','home','explosive'];
 $user_role = $role[$_SESSION['user_role']-1];
     if (isset($_POST['logout'])) {
         session_destroy(); 

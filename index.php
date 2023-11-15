@@ -9,7 +9,7 @@
 
   <style>
   body{
-      background-color:#0E0F2E;
+      background-color:#0f0f0f;
   }
    a:hover{
        text-decoration:none;
@@ -73,7 +73,7 @@
     font-style: italic;
 } 
 .bg_head {
-     background-color : #191D43;
+     background-color : #5a1313;
 }
 .logo {
     border-radius:20px;
@@ -95,13 +95,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-flex justify-content-center " id="navbarCollapse">
-                <div class="navbar-nav">
+                <!-- <div class="navbar-nav">
             
                   <a href="dashboard/godam_dashboard.php" class="btn btn-primary mr-2" type="button">Godowns Data</a>
                      <a href="dashboard/mill_district_dashboard.php" class="btn btn-primary mr-2" type="button">Mills Data</a>
                      <a href="dashboard/depo_district_dashboard.php" class="btn btn-primary mr-2" type="button">Depots Data</a>
              
-                </div>
+                </div> -->
             </div>
             <?php 
             include_once('admin/admin_button.php');

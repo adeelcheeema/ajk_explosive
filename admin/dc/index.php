@@ -236,12 +236,8 @@ include('get_data.php');
       <div class="col-sm-12 p-3">
         <div class="row">
           <div class="col-lg-12 mx-auto">
-            <div class="d-flex justify-content-end p-4">
-          <a class="btn btn-success btn-lg" href="home/register.php">
-                      Add New Record
-                    </a>
-  </div>
-          
+            <h1 class=" text-center h1 alert alert-primary">New Registrations</h1>
+          </div>
           <div class="col-lg-12 mx-auto">
             <div class="filter-result ">
               <div class="job-box d-md-flex align-items-center justify-content-between career-form">
@@ -285,25 +281,9 @@ include('get_data.php');
                   <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
                     <?php echo $row_d['quality_req'] ?>
                   </div>
-
-                  <?php
-                  if ($row_d['is_noc'] == 2) { ?>
-                    <div class="holder bg-dark mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex text-white"> NOC Rejected </div>
-                  <?php  } 
-                  elseif ($row_d['is_noc'] == 1){ ?>
-                    <div class="holder bg-warning mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex"> Moved to Explosive </div>
-                    <?php  }
-                        
-                
-                  else { ?>
-                    <a class="img-holder bg-success mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="home/forward.php?aa=<?php echo $row_d['id'] ?>">
-                    Accept NOC 
-                    </a>
-                    <a class="img-holder bg-danger mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="home/forward.php?rr=<?php echo $row_d['id'] ?>">
-                    REJECT NOC 
-                    </a>
-                    <?php  }
-                          ?>
+                    <a class="img-holder bg-success mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="explosive/forward.php?dd=<?php echo $row_d['id'] ?>">
+                      Add Comments
+                    </a> 
                 </div>
               </div>
 

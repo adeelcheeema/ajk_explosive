@@ -8,10 +8,9 @@
   <link rel="stylesheet" href=" https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css">
 
   <style>
-    a:hover {
-      text-decoration: none;
-    }
-
+      a:hover{
+           text-decoration:none;
+       }
     .career-form {
       background-color: #4e63d7 !important;
     }
@@ -67,7 +66,7 @@
       -webkit-box-shadow: 0 0 35px 0 rgba(130, 130, 130, 0.2);
       box-shadow: 0 0 35px 0 rgba(130, 130, 130, 0.2);
       border-radius: 10px;
-      padding: 10px;
+      padding: 10px ;
     }
 
     ul {
@@ -84,7 +83,7 @@
     }
 
     .job-box .top-holder {
-      padding: 10px;
+      padding: 10px ;
       background-color: #586de3;
       font-family: "Open Sans", sans-serif;
       color: #fff;
@@ -98,9 +97,9 @@
     .job-box .img-holder {
       padding: 10px;
       justify-content: center;
-      /* background-color: #4e63d7;
+      background-color: #4e63d7;
       background-image: -webkit-gradient(linear, left top, right top, from(rgba(78, 99, 215, 0.9)), to(#5a85dd));
-      background-image: linear-gradient(to right, rgba(78, 99, 215, 0.9) 0%, #5a85dd 100%); */
+      background-image: linear-gradient(to right, rgba(78, 99, 215, 0.9) 0%, #5a85dd 100%);
       font-family: "Open Sans", sans-serif;
       color: #fff;
       font-size: 16px;
@@ -122,7 +121,7 @@
       align-items: baseline;
     }
 
-    .job-box .edit {
+      .job-box .edit {
       padding: 10px;
       justify-content: center;
       background-color: white;
@@ -134,13 +133,12 @@
       border-radius: 20px;
       align-items: baseline;
     }
-
-    .holder-red {
-      color: red !important;
+    
+     .holder-red{
+         color: red !important;
     }
-
-    .holder-stock {
-      color: #4e63d7 !important;
+     .holder-stock{
+         color: #4e63d7 !important;
     }
 
     .holder-top {
@@ -217,12 +215,12 @@
     .mb-30 {
       margin-bottom: 30px;
     }
-
-    .text_quan {
-      font-size: 16px;
-      font-style: italic;
-      margin-left: 5px;
-    }
+     .text_quan {
+    font-size: 16px;
+    font-style: italic;
+      margin-left:5px;
+}  
+   
   </style>
 </head>
 
@@ -233,99 +231,67 @@ include('get_data.php');
 <body>
   <div class="container-fluid p-1">
     <div class="row">
-      <div class="col-sm-12 p-3">
-        <div class="row">
-          <div class="col-lg-12 mx-auto">
-            <div class="d-flex justify-content-end p-4">
-          <a class="btn btn-success btn-lg" href="home/register.php">
-                      Add New Record
-                    </a>
-  </div>
-          
-          <div class="col-lg-12 mx-auto">
-            <div class="filter-result ">
-              <div class="job-box d-md-flex align-items-center justify-content-between career-form">
-                <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                  Id
-                </div>
-                <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                  Company Name
-                </div>
-                <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                  Contractor Name
-                </div>
-                <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                  Department Name
-                </div>
-                <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                  Quantity Required
-                </div>
-                <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                </div>
-              </div>
+  <div class="col-sm-12 p-3">
+    <div class="row">
+         <div class="col-lg-12 mx-auto">
+         <h1 class=" text-center h1 alert alert-primary">New Registrations</h1>
+         </div>
+      <div class="col-lg-12 mx-auto">
+        <div class="filter-result ">
+          <div class="job-box d-md-flex align-items-center justify-content-between career-form">
+            <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+              Id
             </div>
-            <?php
-            while ($row_d = $depo->fetch_assoc()) {
-            ?>
-
-              <div class="filter-result">
-                <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
-                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                    <?php echo $row_d['id'] ?>
-                  </div>
-                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                    <?php echo $row_d['company_name'] ?>
-                  </div>
-                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                    <?php echo $row_d['contractor_name'] ?>
-                  </div>
-                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                    <?php echo $row_d['dept_name'] ?>
-                  </div>
-                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                    <?php echo $row_d['quality_req'] ?>
-                  </div>
-
-                  <?php
-                  if ($row_d['is_noc'] == 2) { ?>
-                    <div class="holder bg-dark mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex text-white"> NOC Rejected </div>
-                  <?php  } 
-                  elseif ($row_d['is_noc'] == 1){ ?>
-                    <div class="holder bg-warning mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex"> Moved to Explosive </div>
-                    <?php  }
-                        
-                
-                  else { ?>
-                    <a class="img-holder bg-success mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="home/forward.php?aa=<?php echo $row_d['id'] ?>">
-                    Accept NOC 
-                    </a>
-                    <a class="img-holder bg-danger mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="home/forward.php?rr=<?php echo $row_d['id'] ?>">
-                    REJECT NOC 
-                    </a>
-                    <?php  }
-                          ?>
-                </div>
-              </div>
-
-            <?php
-            }
-            ?>
+              <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+              Name
+            </div>
+            <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+              License Type
+            </div>
+             <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+            </div>
           </div>
         </div>
+        <?php
+        while ($row_d = $depo->fetch_assoc())  {
+        ?>
+        <a href="depo_listing_dashboard.php?dd=<?php echo $row_d['id'] ?>" target="_blank">
+          <div class="filter-result">
+            <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
+            <div class="img-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+              <?php echo $row_d['id'] ?>
+              </div>
+              <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+              <?php echo $row_d['name'] ?>
+              </div>
+               <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+                <?php echo $row_d['license']?>
+              </div>
+                <div class="edit mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+              <button class="btn btn-success">Generate NOC</button>
+              </div>
+            </div>
+          </div>
+          </a>
+            <?php  
+            } 
+?>
       </div>
     </div>
+  </div>
+  </div>
 
-    <!-- Include Bootstrap JS and jQuery (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
+  <!-- Include Bootstrap JS and jQuery (optional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
 
-    <script>
-      new DataTable('#datatable');
-      new DataTable('#datatableMill');
-    </script>
+  <script>
+    new DataTable('#datatable');
+    new DataTable('#datatableMill');
+  </script>
 
 
 </body>

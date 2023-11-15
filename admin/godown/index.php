@@ -8,12 +8,12 @@
   <style>
     body {
         
-   background-color: #0E0F2E;
+   background-color: #0f0f0f;
    color:white;
     }
 
     .container {
-        background-color : #191D43;
+        background-color : #5a1313;
       /* Add a semi-transparent white background to the form container */
       padding: 20px;
       border-radius: 10px;

@@ -98,9 +98,9 @@
     .job-box .img-holder {
       padding: 10px;
       justify-content: center;
-      background-color: #4e63d7;
+      /* background-color: #4e63d7;
       background-image: -webkit-gradient(linear, left top, right top, from(rgba(78, 99, 215, 0.9)), to(#5a85dd));
-      background-image: linear-gradient(to right, rgba(78, 99, 215, 0.9) 0%, #5a85dd 100%);
+      background-image: linear-gradient(to right, rgba(78, 99, 215, 0.9) 0%, #5a85dd 100%); */
       font-family: "Open Sans", sans-serif;
       color: #fff;
       font-size: 16px;
@@ -263,32 +263,36 @@ include('get_data.php');
             <?php
             while ($row_d = $depo->fetch_assoc()) {
             ?>
-              <a href="depo_listing_dashboard.php?dd=<?php echo $row_d['id'] ?>" target="_blank">
-                <div class="filter-result">
-                  <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
-                    <div class="img-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                      <?php echo $row_d['id'] ?>
-                    </div>
-                    <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                      <?php echo $row_d['company_name'] ?>
-                    </div>
-                    <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                      <?php echo $row_d['contractor_name'] ?>
-                    </div>
-                    <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                      <?php echo $row_d['dept_name'] ?>
-                    </div>
-                    <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                      <?php echo $row_d['quality_req'] ?>
-                    </div>
-                    <div class="edit mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                      <?php 
-                      include_once('action_button.php')
-                      ?>
-                    </div>
+
+              <div class="filter-result">
+                <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
+                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+                    <?php echo $row_d['id'] ?>
                   </div>
+                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+                    <?php echo $row_d['company_name'] ?>
+                  </div>
+                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+                    <?php echo $row_d['contractor_name'] ?>
+                  </div>
+                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+                    <?php echo $row_d['dept_name'] ?>
+                  </div>
+                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+                    <?php echo $row_d['quality_req'] ?>
+                  </div>
+
+                  <?php
+                  if ($row_d['is_dc']) { ?>
+                    <div class="holder bg-warning mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex"> Moved To DC </div>
+                  <?php  } else { ?>
+                    <a class="img-holder bg-success mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="explosive/forward.php?dd=<?php echo $row_d['id'] ?>">
+                      Forward To DC
+                    </a> <?php  }
+                          ?>
                 </div>
-              </a>
+              </div>
+
             <?php
             }
             ?>

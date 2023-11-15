@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
   body{
-      background-color:#0E0F2E;
+      background-color:#0f0f0f;
       color:white;
   }
   
@@ -36,7 +36,7 @@
 
           <form style="width: 23rem; margin-top:20vh" method="post">
               <a href="https://industries.ajk.gov.pk/explosive">
-               <img src="https://industries.ajk.gov.pk/wp-content/uploads/2022/11/WhatsApp-Image-2022-12-02-at-2.21.30-PM-990x1024.jpeg" class="logo mb-4" height="180" alt="Food">
+               <img src="https://industries.ajk.gov.pk/wp-content/uploads/2022/11/WhatsApp-Image-2022-12-02-at-2.21.30-PM-990x1024.jpeg" class="logo mb-4" height="180" alt="Explosive">
             </a>
       
             <div class="form-outline mb-4">
@@ -61,7 +61,7 @@
 
       </div>
       <div class="col-sm-6 px-0 d-none d-sm-block">
-        <img src="https://w0.peakpx.com/wallpaper/54/12/HD-wallpaper-wheat-crops-landscape-nature-senary.jpg"
+        <img src="https://media.istockphoto.com/id/1407356502/photo/gunpowder-explosive-substances-which-burn-quickly-used-as-a-propellant-charge-in-firearms-or.webp?b=1&s=170667a&w=0&k=20&c=g1ykJVV20IA3pHkS33SrUf4QG-TT1vG3Gr5pI9GIMTc="
           alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
       </div>
     </div>

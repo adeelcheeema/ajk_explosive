@@ -1,5 +1,5 @@
 <?php
-include_once '../conn.php';
+include_once '../../conn.php';
 date_default_timezone_set("Asia/Karachi");
 if ($_POST) {
     
@@ -31,6 +31,7 @@ if ($_POST) {
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+    header('Location: https://industries.ajk.gov.pk/explosive/admin/');
 }
 $conn->close();
 ?>

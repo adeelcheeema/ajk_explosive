@@ -9,10 +9,10 @@
 
   <style>
   body{
-      background-color:#0E0F2E;
+      background-color:#0f0f0f;
   }
   .bg_head {
-     background-color : #191D43;
+     background-color : #5a1313;
 }.logo {
     border-radius:20px;
 }
@@ -25,23 +25,14 @@
 <body>
      <nav class="navbar navbar-expand-lg navbar-dark bg_head">
         <div class="container-fluid">
-            <a href="https://industries.ajk.gov.pk/portal" class="navbar-brand">
-                <img src="https://industries.ajk.gov.pk/wp-content/uploads/2022/11/WhatsApp-Image-2022-12-02-at-2.21.30-PM-990x1024.jpeg" class="logo" height="80" alt="Food">
+            <a href="https://industries.ajk.gov.pk/explosive" class="navbar-brand">
+                <img src="https://industries.ajk.gov.pk/wp-content/uploads/2022/11/WhatsApp-Image-2022-12-02-at-2.21.30-PM-990x1024.jpeg" class="logo" height="80" alt="Explosive">
                 <span class="text-sucess">Industries Department AJ&K</span>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-flex justify-content-center " id="navbarCollapse">
-                <div class="navbar-nav">
-            
-                  <a href="godam_dashboard.php" class="btn btn-primary mr-2" type="button">Godown Data</a>
-                     <a href="mill_district_dashboard.php" class="btn btn-primary mr-2" type="button">Mill Data</a>
-                     <a href="depo_district_dashboard.php" class="btn btn-primary mr-2" type="button">Depo Data</a>
-             
-                </div>
-            </div>
-            
+      
              <form method="post">
         <input class="btn btn-danger mr-2" type="submit" name="logout" value="Logout">
     </form>
@@ -51,8 +42,8 @@
 
     <?php 
 switch($user_role){
-    case 'zone':
-        include('zone/index.php');
+    case 'dc':
+        include('dc/index.php');
         break; 
     case 'godown':
         include('godown/index.php');
