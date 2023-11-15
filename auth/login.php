@@ -35,8 +35,8 @@
         <div class="d-flex align-items-center justify-content-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
           <form style="width: 23rem; margin-top:20vh" method="post">
-              <a href="https://food.ajk.gov.pk/portal/">
-               <img src="https://food.ajk.gov.pk/wp-content/uploads/2023/09/Screenshot-2023-09-26-at-3.05.41-PM.png" class="logo mb-4" height="180" alt="Food">
+              <a href="https://industries.ajk.gov.pk/explosive">
+               <img src="https://industries.ajk.gov.pk/wp-content/uploads/2022/11/WhatsApp-Image-2022-12-02-at-2.21.30-PM-990x1024.jpeg" class="logo mb-4" height="180" alt="Food">
             </a>
       
             <div class="form-outline mb-4">
