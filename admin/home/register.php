@@ -13,7 +13,7 @@
         }
 
         .container {
-            background-color: #5a1313;
+            background-color: #191D43;
             /* Add a semi-transparent white background to the form container */
             padding: 20px;
             border-radius: 10px;
