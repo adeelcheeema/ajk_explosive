@@ -88,7 +88,7 @@
      <nav class="navbar navbar-expand-lg navbar-dark bg_head">
         <div class="container-fluid">
             <a href="https://industries.ajk.gov.pk" class="navbar-brand">
-                <img src="https://industries.ajk.gov.pk/wp-content/uploads/2022/11/WhatsApp-Image-2022-12-02-at-2.21.30-PM-990x1024.jpeg" class="logo" height="80" alt="Food">
+                <img src="http://localhost/ajk_explosive/wp-content/uploads/2022/11/WhatsApp-Image-2022-12-02-at-2.21.30-PM-990x1024.jpeg" class="logo" height="80" alt="Food">
                 <span class="text-sucess">Industries Department AJ&K</span>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
