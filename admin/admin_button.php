@@ -15,11 +15,11 @@
             
             ';}
             
-            else if ($portal_user_id) { echo '<a href="https://industries.ajk.gov.pk/explosive/admin" class="btn btn-warning mr-2" type="button">Manage Inventory</a>
+            else if ($portal_user_id) { echo '<a href="http://localhost/ajk_explosive/admin" class="btn btn-warning mr-2" type="button">Manage Inventory</a>
                 <form method="post" class="m-0">
         <input class="btn btn-danger mr-2" type="submit" name="logout" value="Logout">
     </form>
             
             ';}
-            else { echo '<a href="https://industries.ajk.gov.pk/explosive/auth/login.php" class="btn btn-primary mr-2" type="button">Login</a>';}
+            else { echo '<a href="http://localhost/ajk_explosive/auth/login.php" class="btn btn-primary mr-2" type="button">Login</a>';}
             ?>
