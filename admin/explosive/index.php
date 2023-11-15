@@ -243,10 +243,16 @@ include('get_data.php');
               Id
             </div>
               <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-              Name
+              Company Name
             </div>
             <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-              License Type
+              Contractor Name
+            </div>
+            <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+              Department Name
+            </div>
+            <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+              Quality Required
             </div>
              <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
             </div>
@@ -262,10 +268,16 @@ include('get_data.php');
               <?php echo $row_d['id'] ?>
               </div>
               <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-              <?php echo $row_d['name'] ?>
+              <?php echo $row_d['company_name'] ?>
               </div>
                <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                <?php echo $row_d['license']?>
+                <?php echo $row_d['contractor_name']?>
+              </div>
+              <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+                <?php echo $row_d['dept_name']?>
+              </div>
+              <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
+                <?php echo $row_d['quality_req']?>
               </div>
                 <div class="edit mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
               <button class="btn btn-success">Generate NOC</button>

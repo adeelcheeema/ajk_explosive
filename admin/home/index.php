@@ -38,15 +38,8 @@ include('process.php');
 <body>
     <div class="container mt-5 mb-5">
       <div>
-          <h1 class="mb-4 text-center">Inventory Management</h1>
-          <h1 class="mb-4 text-center">DFC
-            (
-            <?php
-      
-        if (mysqli_num_rows($district)) {
-          $district_name = $district->fetch_assoc();
-          echo $district_name["district_name"];
-        } ?>)
+          <h1 class="mb-4 text-center">NOC / License Form</h1>
+          <h1 class="mb-4 text-center">Home Department
         </h1>
         <form id="myForm" method="post">
             <!--<div class="row p-3">-->
@@ -69,19 +62,19 @@ include('process.php');
 
 
                 <div class="form-group col">
-                    <label for="millName">Company Name:</label>
-                    <input type="text" class="form-control form-control-lg" id="millname" name="millname">
+                    <label for="company_name">Company Name:</label>
+                    <input type="text" class="form-control form-control-lg" id="company_name" name="company_name">
                 </div>
 
                 <div class="form-group col">
-                    <label for="contractorname">Contractor Name:</label>
-                    <input type="text" class="form-control form-control-lg" id="contractorname" name="contractorname">
+                    <label for="contractor_name">Contractor Name:</label>
+                    <input type="text" class="form-control form-control-lg" id="contractor_name" name="contractor_name">
 
                 </div>
 
                 <div class="form-group col">
-                    <label for="ownercnic">CNIC(Owner):</label>
-                    <input type="text" class="form-control form-control-lg" id="ownercnic" name="ownercnic">
+                    <label for="owner_cnic">CNIC(Owner):</label>
+                    <input type="text" class="form-control form-control-lg" id="owner_cnic" name="owner_cnic">
 
                 </div>
                 <div class="form-group col">
@@ -90,12 +83,12 @@ include('process.php');
                 </div>
 
                 <div class="form-group col">
-                    <label for="companyreg">Company Registration:</label>
-                    <input type="text" class="form-control form-control-lg" id="companyreg" name="companyreg">
+                    <label for="company_reg">Company Registration:</label>
+                    <input type="text" class="form-control form-control-lg" id="company_reg" name="company_reg">
                 </div>
 
             </div>
-        </form>
+       
     
     <div class="row">
         <div class="form-group col">
@@ -115,8 +108,8 @@ include('process.php');
 
         </div>
         <div class="form-group col">
-            <label for="address">Address:</label>
-            <input type="text" class="form-control form-control-lg" id="address" name="address">
+            <label for="address_loc">Address:</label>
+            <input type="text" class="form-control form-control-lg" id="address_loc" name="address_loc">
         </div>
 
         <div class="form-group col">
@@ -147,31 +140,7 @@ include('process.php');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-    <script>
-        document.getElementById("myForm").addEventListener("submit", function (event) {
-            const submitButton = document.getElementById("submitBtn");
-            const mill = document.getElementById("millName").value;
-            const openingBalance = document.getElementById("openingBalance").value;
-            const receive = document.getElementById("receive").value;
-            const dispatch = document.getElementById("dispatch").value;
-            const todaySale = document.getElementById("todaySale").value;
-            if (mill === "") {
-                alert("Please Select Mill");
-                event.preventDefault();
-                return
-            } else if (
-                openingBalance === "" &&
-                receive === "" &&
-                dispatch === "" &&
-                todaySale === ""
-            ) {
-                alert("Please Enter data");
-                event.preventDefault(); // Prevent the form from submitting
-                return
-            }
-            submitButton.style.display = "none";
-        });
-    </script>
+
 </body>
 
 </html>

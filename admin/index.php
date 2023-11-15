@@ -58,7 +58,7 @@ switch($user_role){
         include('godown/index.php');
         break;
     case 'home':
-        include('home/index.php');
+        include('explosive/index.php');
         break;
     case 'explosive':
         include('explosive/index.php');

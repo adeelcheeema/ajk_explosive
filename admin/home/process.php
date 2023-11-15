@@ -3,27 +3,27 @@ include_once '../conn.php';
 date_default_timezone_set("Asia/Karachi");
 if ($_POST) {
     
-    $d_ID = $_POST['distrctID'];
-    $millId = $_POST['millName'];
-    $openingBalance = $_POST['openingBalance'];
-    $receive = $_POST['receive'];
-    $dispatch = $_POST['dispatch'];
-    $todaySale = $_POST['todaySale'];
+    $company_name = $_POST['company_name'];
+    $contractor_name = $_POST['contractor_name'];
+    $owner_cnic = $_POST['owner_cnic'];
+    $contractor_cnic = $_POST['contractor_cnic'];
+    $company_reg = $_POST['company_reg'];
+    $project_name = $_POST['project_name'];
+    $dept_name = $_POST['dept_name'];
+    $quality_req = $_POST['quality_req'];
+    $address_loc = $_POST['address_loc'];
+    $project_loc = $_POST['project_loc'];
 
-    $date = date('Y-m-d H:i:s');
-    if (isset($_POST['date']) && $_POST['date'] != "") {
-        $date = date('Y-m-d H:i:s',strtotime($_POST['date'].' '.date('H:i:s')));
-    };
-    
-    $sql = "INSERT INTO inventory (
-        mill_id,
-        opening_balance, receive, 
-        dispatch,today_sale,district_id,date
+    $sql = "INSERT INTO licence (
+        company_name , contractor_name, owner_cnic,
+        contractor_cnic, company_reg, project_name,
+        dept_name, quality_req, address_loc, project_loc
     ) VALUES (
-        '$millId',
-        '$openingBalance', '$receive', 
-        '$dispatch', 
-        '$todaySale','$d_ID','$date'
+        '$company_name',
+        '$contractor_name', '$owner_cnic', 
+        '$contractor_cnic', 
+        '$company_reg','$project_name','$dept_name',
+        '$quality_req','$address_loc','$project_loc' 
     )";
     
     if ($conn->query($sql) === TRUE) {
