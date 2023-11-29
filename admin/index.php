@@ -25,8 +25,8 @@
 <body>
      <nav class="navbar navbar-expand-lg navbar-dark bg_head">
         <div class="container-fluid">
-            <a href="https://industries.ajk.gov.pk/explosive" class="navbar-brand">
-                <img src="https://industries.ajk.gov.pk/wp-content/uploads/2022/11/WhatsApp-Image-2022-12-02-at-2.21.30-PM-990x1024.jpeg" class="logo" height="80" alt="Explosive">
+            <a href="https://localhost/explosive" class="navbar-brand">
+                <img src="https://localhost/explosive/admin/images/logo.jpeg" class="logo" height="80" alt="Explosive">
                 <span class="text-sucess">Industries Department AJ&K</span>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -55,7 +55,7 @@ switch($user_role){
         include('explosive/index.php');
         break;
     default:
-        header('Location: https://industries.ajk.gov.pk/explosive/');
+        header('Location: https://localhost/explosive/');
         exit;
 }
 ?>

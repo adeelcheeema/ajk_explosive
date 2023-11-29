@@ -14,7 +14,7 @@ if ($ID) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
     
-    header('Location: https://industries.ajk.gov.pk/dc/admin/');
+    header('Location: https://localhost/explosive/admin/');
 
     $conn->close();
 }

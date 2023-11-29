@@ -2,6 +2,26 @@
 include_once '../../conn.php';
 date_default_timezone_set("Asia/Karachi");
 if ($_POST) {
+
+    $uploadDirectory = "../uploads/";
+  
+    $uploadedFiles = [];
+ 
+    foreach ($_FILES['userfile']['name'] as $key => $filename) {
+        $tempFilePath = $_FILES['userfile']['tmp_name'][$key];
+    
+        $file_name = $filename;
+        $newFilePath = $uploadDirectory . $file_name;
+        
+        if (move_uploaded_file($tempFilePath, $newFilePath)) {
+            $uploadedFiles[] = $file_name;
+        } else {
+            echo "Error uploading file: $filename<br>";
+        }
+    }
+
+    $attachmentsString =  implode(",",$uploadedFiles);
+    
     $company_name = $_POST['company_name'];
     $contractor_name = $_POST['contractor_name'];
     $owner_cnic = $_POST['owner_cnic'];
@@ -15,17 +35,18 @@ if ($_POST) {
     $sql = "INSERT INTO licence (
         company_name , contractor_name, owner_cnic,
         contractor_cnic, company_reg, project_name,
-        dept_name, quality_req, address_loc, project_loc
+        dept_name, quality_req, address_loc, project_loc,attachments
     ) VALUES (
         '$company_name',
         '$contractor_name', '$owner_cnic', 
         '$contractor_cnic', 
         '$company_reg','$project_name','$dept_name',
-        '$quality_req','$address_loc','$project_loc' 
+        '$quality_req','$address_loc','$project_loc','$attachmentsString'
     )";
-    header('Location: https://industries.ajk.gov.pk/explosive/admin/');
+
     if ($conn->query($sql) === TRUE) {
         echo '<script>alert("Record inserted successfully!");</script>';
+        header('Location: https://localhost/explosive/admin/');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

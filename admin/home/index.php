@@ -65,9 +65,7 @@
 
     .filter-result .job-box {
       background: #fff;
-      -webkit-box-shadow: 0 0 35px 0 rgba(130, 130, 130, 0.2);
-      box-shadow: 0 0 35px 0 rgba(130, 130, 130, 0.2);
-      border-radius: 10px;
+      border: solid #0001;
       padding: 10px;
     }
 
@@ -85,23 +83,18 @@
     }
 
     .job-box .top-holder {
-      padding: 10px;
-      background-color: #586de3;
+      /* padding: 4px; */
       font-family: "Open Sans", sans-serif;
       color: #fff;
       font-size: 16px;
       font-weight: 700;
-      justify-content: center;
+      justify-content: flex-start;
       flex: 1;
-      border-radius: 20px;
     }
 
     .job-box .img-holder {
-      padding: 10px;
+      padding: 8px;
       justify-content: center;
-      /* background-color: #4e63d7;
-      background-image: -webkit-gradient(linear, left top, right top, from(rgba(78, 99, 215, 0.9)), to(#5a85dd));
-      background-image: linear-gradient(to right, rgba(78, 99, 215, 0.9) 0%, #5a85dd 100%); */
       font-family: "Open Sans", sans-serif;
       color: #fff;
       font-size: 16px;
@@ -111,21 +104,18 @@
     }
 
     .job-box .holder {
-      padding: 10px;
-      justify-content: center;
-      background-color: #f3f3f3;
+      justify-content: flex-start;
       color: black;
       font-family: "Open Sans", sans-serif;
       font-size: 16px;
       font-weight: 700;
       flex: 1;
-      border-radius: 20px;
       align-items: baseline;
     }
 
     .job-box .edit {
       padding: 10px;
-      justify-content: center;
+      justify-content: flex-start;
       background-color: white;
       color: black;
       font-family: "Open Sans", sans-serif;
@@ -145,7 +135,7 @@
     }
 
     .holder-top {
-      justify-content: center;
+      justify-content: flex-start;
       background-color: #f3f3f3 !important;
 
     }
@@ -153,11 +143,11 @@
     .career-title {
       background-color: #4e63d7;
       color: #fff;
-      padding: 10px;
-      text-align: center;
-      border-radius: 10px 10px 0 0;
+
+      text-align: flex-start;
+      /* border-radius: 10px 10px 0 0;
       background-image: -webkit-gradient(linear, left top, right top, from(rgba(78, 99, 215, 0.9)), to(#5a85dd));
-      background-image: linear-gradient(to right, rgba(78, 99, 215, 0.9) 0%, #5a85dd 100%);
+      background-image: linear-gradient(to right, rgba(78, 99, 215, 0.9) 0%, #5a85dd 100%); */
     }
 
     .job-overview {
@@ -216,7 +206,8 @@
     }
 
     .mb-30 {
-      margin-bottom: 30px;
+      margin-bottom: 4px;
+      margin-TOP: 4px;
     }
 
     .text_quan {
@@ -235,95 +226,116 @@
         <div class="row">
           <div class="col-lg-12 mx-auto">
             <div class="d-flex justify-content-end p-4">
-          <a class="btn btn-success btn-lg" href="home/register.php">
-                      Add New Record
-                    </a>
-  </div>
-          
-          <div class="col-lg-12 mx-auto">
-            <div class="filter-result ">
-              <div class="job-box d-md-flex align-items-center justify-content-between career-form">
-                <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                  Id
-                </div>
-                <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                  Company Name
-                </div>
-                <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                  Contractor Name
-                </div>
-                <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                  Department Name
-                </div>
-                <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                  Quantity Required
-                </div>
-                <div class="top-holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                </div>
-              </div>
+              <a class="btn btn-success btn-lg" href="home/register.php">
+                Add New Record
+              </a>
             </div>
-            <?php
-            while ($row_d = $depo->fetch_assoc()) {
-            ?>
 
-              <div class="filter-result">
-                <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
-                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                    <?php echo $row_d['id'] ?>
-                  </div>
-                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                    <?php echo $row_d['company_name'] ?>
-                  </div>
-                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                    <?php echo $row_d['contractor_name'] ?>
-                  </div>
-                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                    <?php echo $row_d['dept_name'] ?>
-                  </div>
-                  <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
-                    <?php echo $row_d['quality_req'] ?>
-                  </div>
-
+            <div class="col-lg-12 mx-auto">
+              <table class="table table-bordered">
+                <thead>   
+                  <th>Company Name</th>
+                  <th>Contractor Name</th>
+                  <th>Department Name</th>
+                  <th>Quantity Required</th>
+                  <th>Status</th>
+                </thead>
+                <tbody>
                   <?php
-                  if ($row_d['is_noc'] == 2) { ?>
-                    <div class="holder bg-dark mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex text-white"> NOC Rejected </div>
-                  <?php  } 
-                  elseif ($row_d['is_noc'] == 1){ ?>
-                    <div class="holder bg-warning mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex"> Moved to Explosive </div>
-                    <?php  }
-                        
-                
-                  else { ?>
-                    <a class="img-holder bg-success mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="home/forward.php?aa=<?php echo $row_d['id'] ?>">
-                    Accept NOC 
-                    </a>
-                    <a class="img-holder bg-danger mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="home/forward.php?rr=<?php echo $row_d['id'] ?>">
-                    REJECT NOC 
-                    </a>
-                    <?php  }
+                  while ($row_d = $depo->fetch_assoc()) {
+                  ?>
+                    <tr>
+                      <td class="">
+                        <?php echo $row_d['company_name'] ?>
+                      </td>
+                      <td class="">
+                        <?php echo $row_d['contractor_name'] ?>
+                      </td>
+                      <td class="">
+                        <?php echo $row_d['dept_name'] ?>
+                      </td>
+                      <td class="">
+                        <?php echo $row_d['quality_req'] ?>
+                      </td>
+                      <td>
+                        <?php
+                        $isLicense = $row_d['is_license'];
+                        $comments = $row_d['comments'];
+                        $isDC = $row_d['is_dc'];
+                        $isNOC = $row_d['is_noc'];
+                        switch (true) {
+                          case $isLicense == 1:
+                        ?>
+                            <a class="badge badge-pill badge-success" href="home/detail.php?dd=<?php echo $row_d['id'] ?>">
+                              License issued
+                            </a>
+                          <?php
+                            break;
+                          case $isLicense == 2:
                           ?>
-                </div>
-              </div>
+                            <a class="badge badge-pill badge-dark" href="home/detail.php?dd=<?php echo $row_d['id'] ?>">
+                              License Rejected
+                            </a>
+                          <?php
+                            break;
+                          case $comments:
+                          ?>
+                            <a class="badge badge-pill badge-warning" href="home/detail.php?dd=<?php echo $row_d['id'] ?>">
+                              DC Commented
+                            </a>
+                          <?php
+                            break;
+                          case $isDC:
+                          ?>
+                            <a class="badge badge-pill badge-warning" href="home/detail.php?dd=<?php echo $row_d['id'] ?>">
+                              Moved To DC
+                            </a>
+                          <?php
+                            break;
 
-            <?php
-            }
-            ?>
+                          case $isNOC == 1:
+                          ?>
+                            <a class="badge badge-pill badge-success" href="home/detail.php?dd=<?php echo $row_d['id'] ?>">
+                              Forwarded to Explosive
+                            </a>
+                          <?php
+                            break;
+                          case $isNOC == 2:
+                          ?>
+                            <a class="badge badge-pill badge-dark" href="home/detail.php?dd=<?php echo $row_d['id'] ?>">
+                              NOC Rejected
+                            </a>
+                          <?php
+                            break;
+                          default:
+                          ?>
+                            <a class="btn btn-sm btn-primary" href="home/detail.php?dd=<?php echo $row_d['id'] ?>">
+                              View Detail
+                            </a>
+                        <?php
+                        }
+                        ?>
+                      </td>
+                    </tr>
+                  <?php
+                  }
+                  ?>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Include Bootstrap JS and jQuery (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
+      <!-- Include Bootstrap JS and jQuery (optional) -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-      new DataTable('#datatable');
-      new DataTable('#datatableMill');
-    </script>
+      <script>
+        new DataTable('#datatable');
+        new DataTable('#datatableMill');
+      </script>
 
 
 </body>

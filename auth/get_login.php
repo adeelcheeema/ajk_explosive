@@ -2,7 +2,7 @@
 include_once '../conn.php';
 
 if(isset($_SESSION['portal_user_id'])) {
-     header('Location: https://industries.ajk.gov.pk/explosive/');
+     header('Location: https://localhost/explosive/');
      exit();
 }
 
@@ -24,7 +24,7 @@ if (isset($_POST['signin'])) {
         $_SESSION['name'] = $row['username'];
         $_SESSION['user_role'] = $row['role_id'];
         $_SESSION['linked_id'] = $row['linked_id'];
-        header('Location: https://industries.ajk.gov.pk/explosive/');
+        header('Location: https://localhost/explosive/');
         exit();
     } else {
         echo '<script>alert("Login Failed!");</script>';

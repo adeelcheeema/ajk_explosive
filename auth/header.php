@@ -1,7 +1,7 @@
 <?php session_start();
 $portal_user_id = null;
 if(!isset($_SESSION['portal_user_id'])) {
-        header('Location: https://industries.ajk.gov.pk/explosive/auth/login.php');
+        header('Location: https://localhost/explosive/auth/login.php');
         exit();
 }
 $portal_user_id = $_SESSION['portal_user_id'];
@@ -13,7 +13,7 @@ $role = ['super-admin','admin','zone','dc','home','explosive'];
 $user_role = $role[$_SESSION['user_role']-1];
     if (isset($_POST['logout'])) {
         session_destroy(); 
-        header('Location: https://industries.ajk.gov.pk/explosive/');  
+        header('Location: https://localhost/explosive/');  
         exit();
 }
 ?>

@@ -8,21 +8,18 @@ $reject_id = $_GET['rr'] ?? null;
 if ($accept_id) {
     $sql = "UPDATE licence SET is_noc = 1 WHERE id = $accept_id;";
     if ($conn->query($sql) === TRUE) {
-         echo '<script>alert("NOC issued and Moved to Explosive Department successfully!");</script>';
+        header('Location: https://localhost/explosive/');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
 else if($reject_id){
     $sql = "UPDATE licence SET is_noc = 2 WHERE id = $reject_id;";
-    header('Location: https://industries.ajk.gov.pk/explosive/admin/');
     if ($conn->query($sql) === TRUE) {
-         echo '<script>alert("NOC Rejected");</script>';
+        header('Location: https://localhost/explosive/');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-   
+    }  
 }
-
 $conn->close();
 ?>

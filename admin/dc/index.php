@@ -64,10 +64,8 @@
 
     .filter-result .job-box {
       background: #fff;
-      -webkit-box-shadow: 0 0 35px 0 rgba(130, 130, 130, 0.2);
-      box-shadow: 0 0 35px 0 rgba(130, 130, 130, 0.2);
-      border-radius: 10px;
-      padding: 10px;
+    border: solid #0001;
+    padding: 10px;
     }
 
     ul {
@@ -84,23 +82,18 @@
     }
 
     .job-box .top-holder {
-      padding: 10px;
-      background-color: #586de3;
+      padding: 4px;
       font-family: "Open Sans", sans-serif;
       color: #fff;
       font-size: 16px;
       font-weight: 700;
       justify-content: center;
       flex: 1;
-      border-radius: 20px;
     }
 
     .job-box .img-holder {
       padding: 10px;
       justify-content: center;
-      /* background-color: #4e63d7;
-      background-image: -webkit-gradient(linear, left top, right top, from(rgba(78, 99, 215, 0.9)), to(#5a85dd));
-      background-image: linear-gradient(to right, rgba(78, 99, 215, 0.9) 0%, #5a85dd 100%); */
       font-family: "Open Sans", sans-serif;
       color: #fff;
       font-size: 16px;
@@ -110,15 +103,13 @@
     }
 
     .job-box .holder {
-      padding: 10px;
       justify-content: center;
-      background-color: #f3f3f3;
+     
       color: black;
       font-family: "Open Sans", sans-serif;
       font-size: 16px;
       font-weight: 700;
       flex: 1;
-      border-radius: 20px;
       align-items: baseline;
     }
 
@@ -152,11 +143,11 @@
     .career-title {
       background-color: #4e63d7;
       color: #fff;
-      padding: 10px;
+    
       text-align: center;
-      border-radius: 10px 10px 0 0;
+      /* border-radius: 10px 10px 0 0;
       background-image: -webkit-gradient(linear, left top, right top, from(rgba(78, 99, 215, 0.9)), to(#5a85dd));
-      background-image: linear-gradient(to right, rgba(78, 99, 215, 0.9) 0%, #5a85dd 100%);
+      background-image: linear-gradient(to right, rgba(78, 99, 215, 0.9) 0%, #5a85dd 100%); */
     }
 
     .job-overview {
@@ -215,7 +206,8 @@
     }
 
     .mb-30 {
-      margin-bottom: 30px;
+      margin-bottom: 4px;
+      margin-TOP: 4px;
     }
 
     .text_quan {
@@ -235,9 +227,7 @@ include('get_data.php');
     <div class="row">
       <div class="col-sm-12 p-3">
         <div class="row">
-          <div class="col-lg-12 mx-auto">
-            <h1 class=" text-center h1 alert alert-primary">New Registrations</h1>
-          </div>
+        
           <div class="col-lg-12 mx-auto">
             <div class="filter-result ">
               <div class="job-box d-md-flex align-items-center justify-content-between career-form">
@@ -263,7 +253,6 @@ include('get_data.php');
             <?php
             while ($row_d = $depo->fetch_assoc()) {
             ?>
-
               <div class="filter-result">
                 <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
                   <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
@@ -281,33 +270,57 @@ include('get_data.php');
                   <div class="holder mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0  d-lg-flex">
                     <?php echo $row_d['quality_req'] ?>
                   </div>
-                    <a class="img-holder bg-success mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="explosive/forward.php?dd=<?php echo $row_d['id'] ?>">
+
+                  <?php
+                  $isLicense = $row_d['is_license'];
+                  $comments = $row_d['comments'];
+                  $isDC = $row_d['is_dc'];
+                  switch (true) {
+                    case $isLicense == 1:
+                  ?>
+                      <a class="img-holder bg-success mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="explosive/detail.php?dd=<?php echo $row_d['id'] ?>">
+                        License issued
+                      </a>
+                    <?php
+                      break;
+                    case $isLicense == 2:
+                    ?>
+                      <a class="img-holder bg-danger mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="explosive/detail.php?dd=<?php echo $row_d['id'] ?>">
+                        License Rejected
+                      </a>
+                    <?php
+                      break;
+                    case $comments:
+                    ?>
+                      <a class="img-holder bg-info mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
+                      View Comments
+                    </a>
+                    <?php
+                      break;
+                    default:
+                    ?>
+                         <a class="img-holder bg-info mr-md-2 mb-md-0 mb-4 mx-auto mx-md-0 d-lg-flex" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
                       Add Comments
-                    </a> 
+                    </a>
+                  <?php
+                  }
+                  ?>
                 </div>
               </div>
-
             <?php
-            }
+            } 
             ?>
+
+
+                
+            
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Include Bootstrap JS and jQuery (optional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
-
-    <script>
-      new DataTable('#datatable');
-      new DataTable('#datatableMill');
-    </script>
-
-
 </body>
 
 </html>

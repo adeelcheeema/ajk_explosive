@@ -1,11 +1,11 @@
    <?php
     if ($portal_user_id && ($user_role == 'home')) {
-      echo '<a href="https://industries.ajk.gov.pk/explosive/auth/login.php" class="btn btn-primary mr-2" type="button">Accept</a>
-      <a href="https://industries.ajk.gov.pk/explosive/auth/login.php" class="btn btn-primary mr-2" type="button">Reject</a>';
+      echo '<a href="https://localhost/explosive/auth/login.php" class="btn btn-primary mr-2" type="button">Accept</a>
+      <a href="https://localhost/explosive/auth/login.php" class="btn btn-primary mr-2" type="button">Reject</a>';
     } else if ($portal_user_id && ($user_role == 'explosive')) {
       echo '
-      <a href="https://industries.ajk.gov.pk/explosive/auth/login.php" class="btn btn-primary mr-2" type="button">Forward To DC</a>';
+      <a href="https://localhost/explosive/auth/login.php" class="btn btn-primary mr-2" type="button">Forward To DC</a>';
     } else {
-      echo '<a href="https://industries.ajk.gov.pk/explosive/auth/login.php" class="btn btn-primary mr-2" type="button">Login</a>';
+      echo '<a href="https://localhost/explosive/auth/login.php" class="btn btn-primary mr-2" type="button">Login</a>';
     }
     ?>

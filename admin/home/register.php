@@ -1,29 +1,52 @@
 <?php include('process.php'); ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Inventory Management</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-    body {
+       
+        .imagePreview {
+            width: 100%;
+            height: 180px;
+            background-position: center center;
+            background: url(../images/missing-image.png);
+            background-color: #fff;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
 
-        background-color: #0f0f0f;
-        color: white;
-    }
+        }
 
-    .container {
-        background-color: #191D43;
-        /* Add a semi-transparent white background to the form container */
-        padding: 20px;
-        border-radius: 10px;
-    }
+        .btn-primary {
+            display: block;
+            border-radius: 0px;
 
-    .form-control {
-        background-color: #515277;
-        border: 2px solid #22245d;
-        color: white;
-    }
+            margin-top: -5px;
+        }
+
+        .imgUp {
+            margin-bottom: 15px;
+        }
+
+        .del {
+            position: absolute;
+            top: 0px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            color: black
+        }
+
+
     </style>
 </head>
 
@@ -34,25 +57,8 @@
             <h1 class="mb-4 text-center">NOC / License Form</h1>
             <h1 class="mb-4 text-center">Home Department
             </h1>
-            <form id="myForm" method="post">
-                <!--<div class="row p-3">-->
-
-                <!--  <div class="form-check pr-3">-->
-                <!--    <input class="form-check-input" type="radio" name="radioGroup" value="show" id="millRadio" checked>-->
-                <!--    <label class="form-check-label" for="defaultCheck1">-->
-                <!--      Mill-->
-                <!--    </label>-->
-                <!--  </div>-->
-                <!--  <div class="form-check">-->
-                <!--    <input class="form-check-input" type="radio" name="radioGroup" value="hide" id="depoRadio">-->
-                <!--    <label class="form-check-label" for="defaultCheck2">-->
-                <!--      Depo-->
-                <!--    </label>-->
-                <!--  </div>-->
-                <!--</div>-->
+            <form id="myForm" method="post" enctype="multipart/form-data">
                 <div class="row">
-
-
 
                     <div class="form-group col">
                         <label for="company_name">Company Name:</label>
@@ -61,8 +67,7 @@
 
                     <div class="form-group col">
                         <label for="contractor_name">Contractor Name:</label>
-                        <input type="text" class="form-control form-control-lg" id="contractor_name"
-                            name="contractor_name">
+                        <input type="text" class="form-control form-control-lg" id="contractor_name" name="contractor_name">
 
                     </div>
 
@@ -73,8 +78,7 @@
                     </div>
                     <div class="form-group col">
                         <label for="contractor_cnic">CNIC(Contractor):</label>
-                        <input type="text" class="form-control form-control-lg" id="contractor_cnic"
-                            name="contractor_cnic">
+                        <input type="text" class="form-control form-control-lg" id="contractor_cnic" name="contractor_cnic">
                     </div>
 
                     <div class="form-group col">
@@ -98,7 +102,7 @@
                     </div>
 
                     <div class="form-group col">
-                        <label for="quality_req">Quality Required:</label>
+                        <label for="quality_req">Quantity Required:</label>
                         <input type="text" class="form-control form-control-lg" id="quality_req" name="quality_req">
 
                     </div>
@@ -112,31 +116,64 @@
                         <input type="text" class="form-control form-control-lg" id="project_loc" name="project_loc">
                     </div>
                 </div>
-        </div>
-
-
-
-
-
+    
         <div class="row">
-            <div class="col text-center">
-                <input id="input-2" name="input2[]" type="file" class="file" data-show-upload="false"
-                    data-show-caption="true" multiple>
+        <div class="form-group col imgUp">
+            <label >Attachment 1:</label>
+                <div class="imagePreview"></div>
+                <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+            </div>
 
+            <div class="form-group col imgUp">
+            <label >Attachment 2:</label>
+                <div class="imagePreview"></div>
+                <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+            </div>
 
+            <div class="form-group col imgUp">
+            <label >Attachment 3:</label>
+                <div class="imagePreview"></div>
+                <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+            </div>
+
+            <div class="form-group col imgUp">
+            <label >Attachment 4:</label>
+                <div class="imagePreview"></div>
+                <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+            </div>
+
+            <div class="form-group col imgUp">
+            <label>Attachment 5:</label>
+                <div class="imagePreview"></div>
+                <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+            </div>
+    
+            <div class="text-center col-sm-12 d-flex justify-content-center">
                 <button id="submitBtn" type="submit" class="btn btn-primary btn-lg text-center">Submit</button>
             </div>
         </div>
         </form>
     </div>
-
-    <!-- Include Bootstrap JS and jQuery (optional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(function() {
+            $(document).on("change", ".uploadFile", function() {
+                var uploadFile = $(this);
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return; 
+                if (/^image/.test(files[0].type)) {
+                    var reader = new FileReader(); 
+                    reader.readAsDataURL(files[0]); 
+                    reader.onloadend = function() { 
+                        uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url(" + this.result + ")");
+                    }
+                }
 
-
-
+            });
+        });
+    </script>
 </body>
 
 </html>
