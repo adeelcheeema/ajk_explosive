@@ -275,15 +275,15 @@
                             break;
                           case $comments:
                           ?>
-                            <a class="badge badge-pill badge-warning" href="explosive/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              DC Commented
+                            <a class="btn btn-primary btn-sm" href="explosive/detail.php?dd=<?php echo $row_d['id'] ?>">
+                              Take Action
                             </a>
                           <?php
                             break;
                           case $isDC:
                           ?>
                             <a class="badge badge-pill badge-warning" href="explosive/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              Moved To DC
+                              Forwaded To DC
                             </a>
                           <?php
                             break;

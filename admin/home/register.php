@@ -62,28 +62,28 @@
 
                     <div class="form-group col">
                         <label for="company_name">Company Name:</label>
-                        <input type="text" class="form-control form-control-lg" id="company_name" name="company_name">
+                        <input type="text" required class="form-control form-control-lg" id="company_name" name="company_name">
                     </div>
 
                     <div class="form-group col">
                         <label for="contractor_name">Contractor Name:</label>
-                        <input type="text" class="form-control form-control-lg" id="contractor_name" name="contractor_name">
+                        <input type="text" required class="form-control form-control-lg" id="contractor_name" name="contractor_name">
 
                     </div>
 
                     <div class="form-group col">
                         <label for="owner_cnic">CNIC(Owner):</label>
-                        <input type="text" class="form-control form-control-lg" id="owner_cnic" name="owner_cnic">
+                        <input type="number" required class="form-control form-control-lg" id="owner_cnic" name="owner_cnic">
 
                     </div>
                     <div class="form-group col">
                         <label for="contractor_cnic">CNIC(Contractor):</label>
-                        <input type="text" class="form-control form-control-lg" id="contractor_cnic" name="contractor_cnic">
+                        <input type="number" required class="form-control form-control-lg" id="contractor_cnic" name="contractor_cnic">
                     </div>
 
                     <div class="form-group col">
                         <label for="company_reg">Company Registration:</label>
-                        <input type="text" class="form-control form-control-lg" id="company_reg" name="company_reg">
+                        <input type="text" required class="form-control form-control-lg" id="company_reg" name="company_reg">
                     </div>
 
                 </div>
@@ -92,28 +92,28 @@
                 <div class="row">
                     <div class="form-group col">
                         <label for="Project_name">Project Name:</label>
-                        <input type="text" class="form-control form-control-lg" id="project_name" name="project_name">
+                        <input type="text" required class="form-control form-control-lg" id="project_name" name="project_name">
                     </div>
 
                     <div class="form-group col">
                         <label for="dept_name">Department Name:</label>
-                        <input type="text" class="form-control form-control-lg" id="dept_name" name="dept_name">
+                        <input type="text" required class="form-control form-control-lg" id="dept_name" name="dept_name">
 
                     </div>
 
                     <div class="form-group col">
-                        <label for="quality_req">Quantity Required:</label>
-                        <input type="text" class="form-control form-control-lg" id="quality_req" name="quality_req">
+                        <label for="quality_req">Quantity Required (kg):</label>
+                        <input type="number" required class="form-control form-control-lg" id="quality_req" name="quality_req">
 
                     </div>
                     <div class="form-group col">
                         <label for="address_loc">Address:</label>
-                        <input type="text" class="form-control form-control-lg" id="address_loc" name="address_loc">
+                        <input type="text" required class="form-control form-control-lg" id="address_loc" name="address_loc">
                     </div>
 
                     <div class="form-group col">
                         <label for="project_loc">Project Location:</label>
-                        <input type="text" class="form-control form-control-lg" id="project_loc" name="project_loc">
+                        <input type="text" required class="form-control form-control-lg" id="project_loc" name="project_loc">
                     </div>
                 </div>
     
@@ -121,31 +121,31 @@
         <div class="form-group col imgUp">
             <label >Attachment 1:</label>
                 <div class="imagePreview"></div>
-                <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+                <label class="btn btn-primary">Upload<input required type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
             </div>
 
             <div class="form-group col imgUp">
             <label >Attachment 2:</label>
                 <div class="imagePreview"></div>
-                <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+                <label class="btn btn-primary">Upload<input required type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
             </div>
 
             <div class="form-group col imgUp">
             <label >Attachment 3:</label>
                 <div class="imagePreview"></div>
-                <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+                <label class="btn btn-primary">Upload<input required type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
             </div>
 
             <div class="form-group col imgUp">
             <label >Attachment 4:</label>
                 <div class="imagePreview"></div>
-                <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+                <label class="btn btn-primary">Upload<input required type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
             </div>
 
             <div class="form-group col imgUp">
             <label>Attachment 5:</label>
                 <div class="imagePreview"></div>
-                <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+                <label class="btn btn-primary">Upload<input required type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
             </div>
     
             <div class="text-center col-sm-12 d-flex justify-content-center">

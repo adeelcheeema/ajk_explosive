@@ -7,6 +7,7 @@
   <!-- Include Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href=" https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     a:hover {
@@ -224,89 +225,63 @@
     <div class="row">
       <div class="col-sm-12 p-3">
         <div class="row">
-         
-            <div class="col-lg-12 mx-auto">
-              <table class="table table-bordered">
-                <thead>   
-                  <th>Company Name</th>
-                  <th>Contractor Name</th>
-                  <th>Department Name</th>
-                  <th>Quantity Required</th>
-                  <th>Status</th>
-                </thead>
-                <tbody>
+          <div class="col-lg-12 mx-auto">
+            <table class="table table-bordered">
+              <thead>
+                <th>Contractor Name</th>
+                <th>Contractor Location</th>
+                <th>Quantity Allowed</th>
+                <th>Quantity Consumed</th>
+                <th>Attachment</th>
+                <th>Date</th>
+              </thead>
+              <tbody>
+                <?php
+                while ($row_d = $s_name->fetch_assoc()) {
+                ?>
+                  <tr>
+                    <td class="">
+                    <a href="<?php echo "detail.php?dd=" . $row_d['contractor_id'] ?>">
+                      <?php echo $row_d['contractor_name'] ?>
+                    </a>
+                    </td>
+                    
+                    <td class="">
+                      <?php echo $row_d['project_loc'] ?>
+                    </td>
+                    <td class="">
+                      <?php echo $row_d['quality_req'] ?> <span> kg </span>
+                    </td>
+                    <td class="">
+                      <?php echo $row_d['explosive_quan'] ?> <span> kg </span>
+                    </td>
+                    <td class="">
+                      <a href="<?php echo "http://localhost/explosive/admin/uploads/" . $row_d['attachment'] ?>">
+                        <i class="fa-solid fa-eye"></i>
+                      </a>
+                    </td>
+                    <td class="">
+                      <?php echo $row_d['created_at'] ?>
+                    </td>
                   <?php
-                  while ($row_d = $depo->fetch_assoc()) {
+                }
                   ?>
-                    <tr>
-                      <td class="">
-                        <?php echo $row_d['company_name'] ?>
-                      </td>
-                      <td class="">
-                        <?php echo $row_d['contractor_name'] ?>
-                      </td>
-                      <td class="">
-                        <?php echo $row_d['dept_name'] ?>
-                      </td>
-                      <td class="">
-                        <?php echo $row_d['quality_req'] ?>
-                      </td>
-                      <td>
-                        <?php
-                        $isLicense = $row_d['is_license'];
-                        $comments = $row_d['comments'];
-                        $isDC = $row_d['is_dc']; 
-                        switch (true) {
-                          case $isLicense == 1:
-                        ?>
-                            <a class="badge badge-pill badge-success" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              License issued
-                            </a>
-                          <?php
-                            break;
-                          case $isLicense == 2:
-                          ?>
-                            <a class="badge badge-pill badge-dark" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              License Rejected
-                            </a>
-                          <?php
-                            break;
-                          case $comments:
-                          ?>
-                            <a class="badge badge-pill badge-warning" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              View Commented
-                            </a>
-                          <?php
-                            break;
-                          default:
-                          ?>
-                            <a class="btn btn-sm btn-primary" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              View Detail
-                            </a>
-                        <?php
-                        }
-                        ?>
-                      </td>
-                    </tr>
-                  <?php
-                  }
-                  ?>
-                </tbody>
-              </table>
-            </div>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Include Bootstrap JS and jQuery (optional) -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Bootstrap JS and jQuery (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-      <script>
-        new DataTable('#datatable');
-        new DataTable('#datatableMill');
-      </script>
+    <script>
+      new DataTable('#datatable');
+      new DataTable('#datatableMill');
+    </script>
 
 
 </body>

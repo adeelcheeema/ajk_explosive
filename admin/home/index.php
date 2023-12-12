@@ -288,7 +288,7 @@
                           case $isDC:
                           ?>
                             <a class="badge badge-pill badge-warning" href="home/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              Moved To DC
+                              Forwaded To DC
                             </a>
                           <?php
                             break;

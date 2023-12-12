@@ -8,7 +8,7 @@ $reject_id = $_GET['rr'] ?? null;
 if ($accept_id) {
     $sql = "UPDATE licence SET is_noc = 1 WHERE id = $accept_id;";
     if ($conn->query($sql) === TRUE) {
-        header('Location: https://localhost/explosive/');
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -16,7 +16,7 @@ if ($accept_id) {
 else if($reject_id){
     $sql = "UPDATE licence SET is_noc = 2 WHERE id = $reject_id;";
     if ($conn->query($sql) === TRUE) {
-        header('Location: https://localhost/explosive/');
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }  

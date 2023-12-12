@@ -1,11 +1,13 @@
 <?php include('auth/header.php');
-
+include('get_total.php');
 $total_stock = 20;
 $total_stock_wheat = 30;
 $total_stock_floor = 15;
 $mill_total = 10;
 $depo_total = 5
 ?>
+
+
 <html>
 
 <head>
@@ -133,18 +135,51 @@ id="myChart" style="width:100%; max-width:600px; height:400px;">
                              <h1 class="text-white">Executive Summary (Explosive) AJK</h1>
         </div>
 
-        <div class="col-md-6 p-2 ">
+        <div class="col-md-3 p-2 ">
           <div class="card bg-success card_big">
-            <p class="text_heading  text-white">Explosive Stock</p>
-            <p class="text_count  text-white"><?php echo $total_stock_wheat ?><span class="text_quan"> ton</span></p>
-          </div>
-      </div>
-       <div class="col-md-6 p-2 ">
-          <div class="card bg-danger card_big">
             <p class="text_heading  text-white">Magazine Stock</p>
-            <p class="text_count  text-white"><?php echo $total_stock_floor ?><span class="text_quan"> ton</span></p>
+            <p class="text_count  text-white"><?php echo $add_total - $send_total + $ret_total ?><span class="text_quan"> kg</span></p>
           </div>
       </div>
+       <div class="col-md p-2 ">
+       <a href="https://localhost/explosive/admin/dashboard/approved" target="_blank">
+          <div class="card bg-primary card_big">
+            <p class="text_heading  text-white">Approved Stock</p>
+            <p class="text_count  text-white"><?php echo $approved_total ?><span class="text_quan"> kg</span></p>
+          </div>
+       </a>
+      </div>
+
+      <div class="col-md p-2 ">
+       <a href="https://localhost/explosive/admin/dashboard/issued" target="_blank">
+          <div class="card bg-info card_big">
+            <p class="text_heading  text-white">Issued Stock</p>
+            <p class="text_count  text-white"><?php echo $send_total ?><span class="text_quan"> kg</span></p>
+          </div>
+       </a>
+      </div>
+
+      <div class="col-md p-2 ">
+      <a href="https://localhost/explosive/admin/dashboard/consumed" target="_blank">
+          <div class="card bg-danger card_big">
+            <p class="text_heading  text-white">Consumed Stock</p>
+            <p class="text_count  text-white"><?php echo $cons_total ?><span class="text_quan"> kg</span></p>
+          </div>
+      </a>
+      </div>
+
+
+      <div class="col-md p-2 ">
+      <a href="https://localhost/explosive/admin/dashboard/returned" target="_blank">
+          <div class="card bg-warning card_big">
+            <p class="text_heading  text-white">Returned Stock</p>
+            <p class="text_count  text-white"><?php echo $ret_total ?><span class="text_quan"> kg</span></p>
+          </div>
+          </a>
+      </div>
+        
+      </div>
+      <div class="row">
         
        <div class="col-md-3 p-2 ">
            <a href="https://localhost/explosive/admin/" target="_blank">

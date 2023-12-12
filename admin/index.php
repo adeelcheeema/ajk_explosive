@@ -54,6 +54,12 @@ switch($user_role){
     case 'explosive':
         include('explosive/index.php');
         break;
+    case 'magazine':
+        include('magazine/index.php');
+        break;
+    case 'inspector':
+            include('inspector/index.php');
+            break;
     default:
         header('Location: https://localhost/explosive/');
         exit;

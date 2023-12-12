@@ -9,13 +9,11 @@ if ($ID) {
     $sql = "UPDATE licence SET is_dc = 1 WHERE id = $ID;";
     
     if ($conn->query($sql) === TRUE) {
-         echo '<script>alert("Moved To Dc successfully!");</script>';
+         echo '<script>alert("Forwaded To Dc successfully!");</script>';
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    
-    header('Location: https://localhost/explosive/admin/');
-
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
     $conn->close();
 }
 ?>

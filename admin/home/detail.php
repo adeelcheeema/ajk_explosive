@@ -133,85 +133,19 @@
 
     <?php
                         $isLicense = $row_d['is_license'];
-                        $comments = $row_d['comments'];
+                        $_comments = $row_d['comments'];
                         $isDC = $row_d['is_dc'];
                         $isNOC = $row_d['is_noc'];
                         $usId = $row_d['id'];
+                        $l_id = $row_d['id'];
                         $imagePaths = explode(",", $row_d['attachments']);
                     }
     ?>
     </tbody>
     </table>
-    <h4 class="mt-3">Attachments</h4>
-    <div class="d-flex flex-direction-row" style="overflow-y:auto">
-        <?php
-        foreach ($imagePaths as $imagePath) {
-
-            echo '<div class="mr-3" style="width: 10rem; min-width:10rem">';
-            echo '<span class="badge badge-pill badge-warning">Affidavit</span>';
-            echo '<img onclick="myFunction(this);" src="http://localhost/explosive/admin/uploads/' . $imagePath . '" class="card-img-top"  style="height: 100%;object-fit: cover;">';
-            echo '</div>';
-            
-            echo '<div class="mr-3" style="width: 10rem; min-width:10rem">';
-            echo '<span class="badge badge-pill badge-warning">CNIC Back</span>';
-            echo '<img onclick="myFunction(this);" src="http://localhost/explosive/admin/uploads/' . $imagePath . '" class="card-img-top"  style="height: 100%;object-fit: cover;">';
-            echo '</div>';
-            
-            echo '<div class="mr-3" style="width: 10rem; min-width:10rem">';
-            echo '<span class="badge badge-pill badge-warning">CNIC Front</span>';
-            echo '<img onclick="myFunction(this);" src="http://localhost/explosive/admin/uploads/' . $imagePath . '" class="card-img-top"  style="height: 100%;object-fit: cover;">';
-            echo '</div>';
-
-            // echo '<div class="card mr-3" style="width: 10rem; min-width:10rem">';
-            // echo '<label>Attachment 1</label>';
-            // echo '<img onclick="myFunction(this);" src="http://localhost/explosive/admin/uploads/' . $imagePath . '" class="card-img-top"  style="height: 100%;object-fit: cover;">';
-            // echo '</div>';
-
-            // echo '<div class="card mr-3" style="width: 10rem; min-width:10rem">';
-            // echo '<label>Attachment 1</label>';
-            // echo '<img onclick="myFunction(this);" src="http://localhost/explosive/admin/uploads/' . $imagePath . '" class="card-img-top"  style="height: 100%;object-fit: cover;">';
-            // echo '</div>';
-
-            // echo '<div class="card mr-3" style="width: 10rem; min-width:10rem">';
-            // echo '<label>Attachment 1</label>';
-            // echo '<img onclick="myFunction(this);" src="http://localhost/explosive/admin/uploads/' . $imagePath . '" class="card-img-top"  style="height: 100%;object-fit: cover;">';
-            // echo '</div>';
-
-        }
-        ?>
-    </div>
-
-    <h4 class="mt-3">Comments</h4>
-    <table class="table table-bordered mt-3">
-        <tbody>
-            <tr>
-                <th style="width: 30%;"><span class="badge badge-pill badge-dark">23-11-2023</span></th>
-                <td style="width: 70%;" id="company_name" name="company_name">
-                    <div class="form-group col-sm-6 p-0">
-                        <span class="badge badge-pill badge-info">Dc Office</span>
-                        <p>
-                            asxasxsa xasx
-                            asxasxsaas
-                            xasxx
-                            sax
-                            asxasxsaxas
-    </p>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th style="width: 30%;"><span class="badge badge-pill badge-dark">24-11-2023</span></th>
-                <td style="width: 70%;" id="company_name" name="company_name">
-                    <div class="form-group col-sm-6 p-0">
-                        <span class="badge badge-pill badge-info">Home Office</span>
-                        <p>
-                            test comment
-    </p>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  
+    <?php  include_once('../components/attachments/view_attachments.php') ?>
+    <?php  include_once('../components/comments/add_comments.php') ?>
 
 
     <table class="table table-bordered mt-3">
@@ -236,7 +170,7 @@
                             </a>
                         <?php
                             break;
-                        case $comments:
+                        case $_comments:
                         ?>
                             <a class="badge badge-pill badge-warning">
                                 DC Commented
@@ -246,7 +180,7 @@
                         case $isDC:
                         ?>
                             <a class="badge badge-pill badge-warning">
-                                Moved To DC
+                                Forwaded To DC
                             </a>
                         <?php
                             break;

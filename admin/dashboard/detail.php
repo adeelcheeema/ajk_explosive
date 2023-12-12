@@ -48,8 +48,7 @@
 <body>
     <div class="container mt-5 mb-5">
         <div>
-            <h4 class="mb-4 text-center">License Form - Explosive Office</h4>
-
+            <h4 class="mb-4 text-center">License</h4>
             <table class="table table-bordered">
 
                 <?php
@@ -136,8 +135,9 @@
                     $isLicense = $row_d['is_license'];
                     $_comments = $row_d['comments'];
                     $isDC = $row_d['is_dc'];
-                    $l_id = $row_d['id'];
+                    $isNOC = $row_d['is_noc'];
                     $usId = $row_d['id'];
+                    $l_id = $row_d['id'];
                     $imagePaths = explode(",", $row_d['attachments']);
                 }
                     ?>
@@ -145,69 +145,9 @@
             </table>
 
             <?php include_once('../components/attachments/view_attachments.php') ?>
-            <?php include_once('../components/comments/add_comments.php') ?>
+        
 
-
-            <table class="table table-bordered mt-3">
-                <tbody>
-                    <tr>
-                        <th style="width: 30%;">Status:</th>
-                        <td style="width: 70%;">
-                            <?php
-
-                            switch (true) {
-                                case $isLicense == 1:
-                            ?>
-                                    <a class="badge badge-pill badge-success">
-                                        License issued
-                                    </a>
-                                <?php
-                                    break;
-                                case $isLicense == 2:
-                                ?>
-                                    <a class="badge badge-pill badge-dark">
-                                        License Rejected
-                                    </a>
-                                <?php
-                                    break;
-                                case $_comments:
-                                ?>
-
-                                    <div class="form-group col-sm-6 d-flex ">
-                                        <a class="btn btn-success mr-2" href="forward.php?aa=<?php echo $usId ?>">
-                                            Accept License
-                                        </a>
-                                        <a class="btn btn-danger" href="forward.php?rr=<?php echo $usId ?>">
-                                            Reject Licence
-                                        </a>
-                                    </div>
-                                <?php
-                                    break;
-                                case $isDC:
-                                ?>
-                                    <a class="badge badge-pill badge-warning">
-                                        Forwaded To DC
-                                    </a>
-                                <?php
-                                    break;
-                                default:
-                                ?>
-                                    <div class="form-group col-sm-6 d-flex ">
-                                        <a class="btn btn-success mr-2" href="forward.php?dd=<?php echo $usId ?>">
-                                            Forward To DC
-                                        </a>
-                                    </div>
-                        </td>
-                <?php
-                            }
-                ?>
-
-                    <tr>
-
-
-                </tbody>
-            </table>
-
+            
 
             <div id="myModal" class="modal" style="display: none;background-color: #000000b5;align-items: center;border-width: 0px;">
                 <span class="close">×</span>
