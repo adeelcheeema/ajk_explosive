@@ -131,9 +131,10 @@
                         </tr>
                     <?php
                     $isLicense = $row_d['is_license'];
-                    $_comments = $row_d['comments'];
                     $isDC = $row_d['is_dc'];
                     $isNOC = $row_d['is_noc'];
+                    $isHome = $row_d['is_home'];
+                    $usId = $row_d['id'];
                     $l_id = $row_d['id'];
                     $imagePaths = explode(",", $row_d['attachments']);
                 }
@@ -141,9 +142,9 @@
                     </tbody>
             </table>
 
-            <?php  include_once('../components/attachments/view_attachments.php') ?>
-             <?php  include_once('../components/comments/add_comments.php') ?>
-           
+            <?php include_once('../components/attachments/view_attachments.php') ?>
+            <?php include_once('../components/comments/add_comments.php') ?>
+
             <table class="table table-bordered mt-3">
                 <tbody>
                     <tr>
@@ -155,7 +156,7 @@
                                 case $isLicense == 1:
                             ?>
                                     <a class="badge badge-pill badge-success">
-                                        License issued
+                                        License Issued
                                     </a>
                                 <?php
                                     break;
@@ -165,30 +166,59 @@
                                         License Rejected
                                     </a>
                                 <?php
-                                  break;
-                                  case $_comments:
-                                    ?>
-                                        <a class="badge badge-pill badge-warning">
-                                            DC Commented
-                                        </a>
-                                    <?php
-                                        break;
-                                  case $isDC:
-                                  ?>
-                                      <a class="badge badge-pill badge-warning">
-                                          Forwaded To DC
-                                      </a>
-                                  <?php
-                                      break;
-                                default:
-
+                                    break;
+                                case $isDC == 1:
                                 ?>
+                                    <a class="badge badge-pill badge-warning" >
+                                        Forwarded to Explosive
+                                    </a>
+                                <?php
+                                    break;
+                                case $isDC == 2:
+                                ?>
+                                    <a class="badge badge-pill badge-dark">
+                                        Application Rejected
+                                    </a>
+                                <?php
+                                    break;
 
+                                case $isNOC == 1:
+                                ?>
+                                    <a class="badge badge-pill badge-success">
+                                        NOC Issued
+                                    </a>
+                                <?php
+                                    break;
+                                case $isNOC == 2:
+                                ?>
+                                    <a class="badge badge-pill badge-dark" >
+                                        NOC Rejected
+                                    </a>
+                                    
+                                <?php
+                                    break;
+                                    case $isHome:
+                                    ?>
+                                        <a class="badge badge-pill badge-info" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
+                                            Forwarded to Home Department
+                                        </a>
+                                        <?php
+                                    break;
+                                default:
+                                ?>
+                                    <div class="form-group col-sm-8 d-flex ">
+                                        <a class="btn btn-success mr-2" href="forward.php?aa=<?php echo $usId ?>">
+                                           Forward to Explosive Department
+                                        </a>
+                                        <a class="btn btn-danger" href="forward.php?rr=<?php echo $usId ?>">
+                                            Reject Application
+                                        </a>
+                                    </div>
                         </td>
                 <?php
                             }
                 ?>
-                
+
                     <tr>
 
 

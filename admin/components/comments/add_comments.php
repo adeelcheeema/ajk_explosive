@@ -1,6 +1,5 @@
 <?php
 include_once('get_comments.php');
-include_once('add_comments.php');
 ?>
 <h4 class="mt-3">Comments</h4>
 <table class="table table-bordered mt-3">

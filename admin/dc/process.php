@@ -1,41 +1,54 @@
 <?php
-include_once '../conn.php';
+include_once '../../conn.php';
 date_default_timezone_set("Asia/Karachi");
 if ($_POST) {
 
-    $depoId = $_POST['depoID'];
-    $openingBalance = $_POST['openingBalance'];
-    $receive = $_POST['receive'];
-    $dispatch = $_POST['dispatch'];
-    $todaySale = $_POST['todaySale'];
+    $uploadDirectory = "../uploads/";
+  
+    $uploadedFiles = [];
+ 
+    foreach ($_FILES['userfile']['name'] as $key => $filename) {
+        $tempFilePath = $_FILES['userfile']['tmp_name'][$key];
     
-    $bags = $_POST['bags'];
-    $weight = $_POST['weight'];
-    $amount = $_POST['amount'];
+        $file_name = $filename;
+        $newFilePath = $uploadDirectory . $file_name;
+        
+        if (move_uploaded_file($tempFilePath, $newFilePath)) {
+            $uploadedFiles[] = $file_name;
+        } else {
+            echo "Error uploading file: $filename<br>";
+        }
+    }
+
+    $attachmentsString =  implode(",",$uploadedFiles);
     
-    $date = date('Y-m-d H:i:s');
-    if (isset($_POST['date']) && $_POST['date'] !== "") {
-        $date = date('Y-m-d H:i:s',strtotime($_POST['date'].' '.date('H:i:s')));
-    };
-    
-    
-    $sql = "INSERT INTO inventory_depo (
-        depo_id,
-        opening_balance, receive,
-        dispatch,today_sale,date,bags,weight,amount
+    $company_name = $_POST['company_name'];
+    $contractor_name = $_POST['contractor_name'];
+    $owner_cnic = $_POST['owner_cnic'];
+    $contractor_cnic = $_POST['contractor_cnic'];
+    $company_reg = $_POST['company_reg'];
+    $project_name = $_POST['project_name'];
+    $dept_name = $_POST['dept_name'];
+    $quality_req = $_POST['quality_req'];
+    $address_loc = $_POST['address_loc'];
+    $project_loc = $_POST['project_loc'];
+    $sql = "INSERT INTO licence (
+        company_name , contractor_name, owner_cnic,
+        contractor_cnic, company_reg, project_name,
+        dept_name, quality_req, address_loc, project_loc,attachments
     ) VALUES (
-        '$depoId',
-        '$openingBalance', '$receive', 
-        '$dispatch', '$todaySale','$date',
-        '$bags','$weight','$amount'
+        '$company_name',
+        '$contractor_name', '$owner_cnic', 
+        '$contractor_cnic', 
+        '$company_reg','$project_name','$dept_name',
+        '$quality_req','$address_loc','$project_loc','$attachmentsString'
     )";
-    
+
     if ($conn->query($sql) === TRUE) {
-         echo '<script>alert("Record inserted successfully!");</script>';
+        echo '<script>alert("Record inserted successfully!");</script>';
+        header('Location: https://localhost/explosive/admin/');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-    $conn->close();
 }
-?>
+$conn->close();

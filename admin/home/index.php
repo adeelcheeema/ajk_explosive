@@ -225,13 +225,8 @@
       <div class="col-sm-12 p-3">
         <div class="row">
           <div class="col-lg-12 mx-auto">
-            <div class="d-flex justify-content-end p-4">
-              <a class="btn btn-success btn-lg" href="home/register.php">
-                Add New Record
-              </a>
-            </div>
 
-            <div class="col-lg-12 mx-auto">
+            
               <table class="table table-bordered">
                 <thead>   
                   <th>Company Name</th>
@@ -260,14 +255,13 @@
                       <td>
                         <?php
                         $isLicense = $row_d['is_license'];
-                        $comments = $row_d['comments'];
                         $isDC = $row_d['is_dc'];
                         $isNOC = $row_d['is_noc'];
                         switch (true) {
                           case $isLicense == 1:
                         ?>
                             <a class="badge badge-pill badge-success" href="home/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              License issued
+                              License Issued
                             </a>
                           <?php
                             break;
@@ -278,25 +272,11 @@
                             </a>
                           <?php
                             break;
-                          case $comments:
-                          ?>
-                            <a class="badge badge-pill badge-warning" href="home/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              DC Commented
-                            </a>
-                          <?php
-                            break;
-                          case $isDC:
-                          ?>
-                            <a class="badge badge-pill badge-warning" href="home/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              Forwaded To DC
-                            </a>
-                          <?php
-                            break;
-
-                          case $isNOC == 1:
+                         
+                      case $isNOC == 1:
                           ?>
                             <a class="badge badge-pill badge-success" href="home/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              Forwarded to Explosive
+                              NOC Issued
                             </a>
                           <?php
                             break;

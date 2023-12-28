@@ -222,91 +222,130 @@
 <body>
   <div class="container-fluid p-1">
     <div class="row">
+
       <div class="col-sm-12 p-3">
+
         <div class="row">
-         
-            <div class="col-lg-12 mx-auto">
-              <table class="table table-bordered">
-                <thead>   
-                  <th>Company Name</th>
-                  <th>Contractor Name</th>
-                  <th>Department Name</th>
-                  <th>Quantity Required</th>
-                  <th>Status</th>
-                </thead>
-                <tbody>
-                  <?php
-                  while ($row_d = $depo->fetch_assoc()) {
-                  ?>
-                    <tr>
-                      <td class="">
-                        <?php echo $row_d['company_name'] ?>
-                      </td>
-                      <td class="">
-                        <?php echo $row_d['contractor_name'] ?>
-                      </td>
-                      <td class="">
-                        <?php echo $row_d['dept_name'] ?>
-                      </td>
-                      <td class="">
-                        <?php echo $row_d['quality_req'] ?>
-                      </td>
-                      <td>
-                        <?php
-                        $isLicense = $row_d['is_license'];
-                        $comments = $row_d['comments'];
-                        $isDC = $row_d['is_dc']; 
-                        switch (true) {
-                          case $isLicense == 1:
-                        ?>
-                            <a class="badge badge-pill badge-success" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              License issued
-                            </a>
-                          <?php
-                            break;
-                          case $isLicense == 2:
-                          ?>
-                            <a class="badge badge-pill badge-dark" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              License Rejected
-                            </a>
-                          <?php
-                            break;
-                          case $comments:
-                          ?>
-                            <a class="badge badge-pill badge-warning" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              View Commented
-                            </a>
-                          <?php
-                            break;
-                          default:
-                          ?>
-                            <a class="btn btn-sm btn-primary" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              View Detail
-                            </a>
-                        <?php
-                        }
-                        ?>
-                      </td>
-                    </tr>
-                  <?php
-                  }
-                  ?>
-                </tbody>
-              </table>
+          <div class="col-lg-12 mx-auto">
+            <div class="d-flex justify-content-end p-4">
+              <a class="btn btn-success btn-lg" href="dc/register.php">
+                Add New Record
+              </a>
             </div>
+          </div>
+          <div class="col-lg-12 mx-auto">
+
+            <table class="table table-bordered">
+              <thead>
+                <th>Company Name</th>
+                <th>Contractor Name</th>
+                <th>Department Name</th>
+                <th>Quantity Required</th>
+                <th>Status</th>
+              </thead>
+              <tbody>
+                <?php
+                while ($row_d = $depo->fetch_assoc()) {
+                ?>
+                  <tr>
+                    <td class="">
+                      <?php echo $row_d['company_name'] ?>
+                    </td>
+                    <td class="">
+                      <?php echo $row_d['contractor_name'] ?>
+                    </td>
+                    <td class="">
+                      <?php echo $row_d['dept_name'] ?>
+                    </td>
+                    <td class="">
+                      <?php echo $row_d['quality_req'] ?>
+                    </td>
+                    <td>
+                      <?php
+                      $isLicense = $row_d['is_license'];
+                      $isDC = $row_d['is_dc'];
+                      $isHome = $row_d['is_home'];
+                      $isNOC = $row_d['is_noc'];
+                      switch (true) {
+                        case $isLicense == 1:
+                      ?>
+                          <a class="badge badge-pill badge-success" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
+                            License Issued
+                          </a>
+                        <?php
+                          break;
+                        case $isLicense == 2:
+                        ?>
+                          <a class="badge badge-pill badge-dark" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
+                            License Rejected
+                          </a>
+                        <?php
+                          break;
+                        case $isDC == 1:
+                        ?>
+                          <a class="badge badge-pill badge-warning" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
+                            Forwarded to Explosive
+                          </a>
+                        <?php
+                          break;
+                        case $isDC == 2:
+                        ?>
+                          <a class="badge badge-pill badge-dark" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
+                            Application Rejected
+                          </a>
+                        <?php
+                          break;
+
+                        case $isNOC == 1:
+                        ?>
+                          <a class="badge badge-pill badge-success" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
+                            NOC Issued
+                          </a>
+                        <?php
+                          break;
+                        case $isNOC == 2:
+                        ?>
+                          <a class="badge badge-pill badge-dark" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
+                            NOC Rejected
+                          </a>
+                        <?php
+                          break;
+                        case $isHome:
+                        ?>
+                          <a class="badge badge-pill badge-info" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
+                            Forwarded to Home Department
+                          </a>
+                        <?php
+                          break;
+                        default:
+                        ?>
+                          <a class="btn btn-sm btn-primary" href="dc/detail.php?dd=<?php echo $row_d['id'] ?>">
+                            View Detail
+                          </a>
+                      <?php
+                      }
+                      ?>
+                    </td>
+                  </tr>
+                <?php
+                }
+                ?>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Include Bootstrap JS and jQuery (optional) -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Bootstrap JS and jQuery (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-      <script>
-        new DataTable('#datatable');
-        new DataTable('#datatableMill');
-      </script>
+    <script>
+      new DataTable('#datatable');
+      new DataTable('#datatableMill');
+    </script>
 
 
 </body>

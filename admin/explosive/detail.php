@@ -128,14 +128,11 @@
                                 <?php echo $row_d['project_loc'] ?>
                             </td>
                         </tr>
-
-
-
-
                     <?php
                     $isLicense = $row_d['is_license'];
-                    $_comments = $row_d['comments'];
                     $isDC = $row_d['is_dc'];
+                    $isNOC = $row_d['is_noc'];
+                    $isHome = $row_d['is_home'];
                     $l_id = $row_d['id'];
                     $usId = $row_d['id'];
                     $imagePaths = explode(",", $row_d['attachments']);
@@ -159,7 +156,7 @@
                                 case $isLicense == 1:
                             ?>
                                     <a class="badge badge-pill badge-success">
-                                        License issued
+                                        License Issued
                                     </a>
                                 <?php
                                     break;
@@ -170,12 +167,12 @@
                                     </a>
                                 <?php
                                     break;
-                                case $_comments:
-                                ?>
 
-                                    <div class="form-group col-sm-6 d-flex ">
+                                case $isNOC == 1:
+                                ?>
+                                   <div class="form-group col-sm-6 d-flex ">
                                         <a class="btn btn-success mr-2" href="forward.php?aa=<?php echo $usId ?>">
-                                            Accept License
+                                            Issue License
                                         </a>
                                         <a class="btn btn-danger" href="forward.php?rr=<?php echo $usId ?>">
                                             Reject Licence
@@ -183,18 +180,26 @@
                                     </div>
                                 <?php
                                     break;
-                                case $isDC:
+                                case $isNOC == 2:
                                 ?>
-                                    <a class="badge badge-pill badge-warning">
-                                        Forwaded To DC
+                                    <a class="badge badge-pill badge-dark">
+                                        NOC Rejected
                                     </a>
+                                <?php
+                                    break;
+                                case $isHome:
+                                ?>
+                                   <a class="badge badge-pill badge-info">
+                                        Forwarded to Home Department
+                                    </a>
+
                                 <?php
                                     break;
                                 default:
                                 ?>
                                     <div class="form-group col-sm-6 d-flex ">
                                         <a class="btn btn-success mr-2" href="forward.php?dd=<?php echo $usId ?>">
-                                            Forward To DC
+                                            Forward to home Department
                                         </a>
                                     </div>
                         </td>

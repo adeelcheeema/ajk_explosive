@@ -55,7 +55,7 @@
     <div class="container mt-5 mb-5">
         <div>
             <h1 class="mb-4 text-center">NOC / License Form</h1>
-            <h1 class="mb-4 text-center">Home Department
+            <h1 class="mb-4 text-center">DC Office
             </h1>
             <form id="myForm" method="post" enctype="multipart/form-data">
                 <div class="row">

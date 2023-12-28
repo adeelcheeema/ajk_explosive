@@ -2,18 +2,24 @@
 include_once '../../conn.php';
 date_default_timezone_set("Asia/Karachi");
 
-$ID = $_GET['dd'] ?? null;
+$accept_id = $_GET['aa'] ?? null;
+$reject_id = $_GET['rr'] ?? null;
 
-if ($ID) {
-    
-    $sql = "UPDATE licence SET is_dc = 1 WHERE id = $ID;";
-    
+if ($accept_id) {
+    $sql = "UPDATE licence SET is_dc = 1 WHERE id = $accept_id;";
     if ($conn->query($sql) === TRUE) {
-         echo '<script>alert("Forwaded To Dc successfully!");</script>';
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-    $conn->close();
 }
+else if($reject_id){
+    $sql = "UPDATE licence SET is_dc = 2 WHERE id = $reject_id;";
+    if ($conn->query($sql) === TRUE) {
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }  
+}
+$conn->close();
 ?>

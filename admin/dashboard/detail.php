@@ -133,7 +133,6 @@
 
                     <?php
                     $isLicense = $row_d['is_license'];
-                    $_comments = $row_d['comments'];
                     $isDC = $row_d['is_dc'];
                     $isNOC = $row_d['is_noc'];
                     $usId = $row_d['id'];

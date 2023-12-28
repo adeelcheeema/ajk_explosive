@@ -19,7 +19,7 @@ if ($accept_id) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 } else if ($ID) {
-    $sql = "UPDATE licence SET is_dc = 1 WHERE id = $ID;";
+    $sql = "UPDATE licence SET is_home = 1 WHERE id = $ID;";
     if ($conn->query($sql) === TRUE) {
         header("Location: " . $_SERVER["HTTP_REFERER"]);
     } else {

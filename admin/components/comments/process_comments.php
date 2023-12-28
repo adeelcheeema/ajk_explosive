@@ -18,9 +18,6 @@ if ($_POST) {
         )";
 
         if ($conn->query($sql) === TRUE) {
-            if($office_name == '4') {
-            $sql = "UPDATE licence SET comments = 1 WHERE id = $l_ID";
-            $conn->query($sql); }
             header("Location: " . $_SERVER["HTTP_REFERER"]);
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;

@@ -255,14 +255,14 @@
                       <td>
                         <?php
                         $isLicense = $row_d['is_license'];
-                        $comments = $row_d['comments'];
                         $isDC = $row_d['is_dc'];
-      
+                        $isNOC = $row_d['is_noc'];
+                        $isHome = $row_d['is_home'];
                         switch (true) {
                           case $isLicense == 1:
                         ?>
                             <a class="badge badge-pill badge-success" href="explosive/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              License issued
+                              License Issued
                             </a>
                           <?php
                             break;
@@ -273,18 +273,28 @@
                             </a>
                           <?php
                             break;
-                          case $comments:
+                          case $isNOC == 1:
                           ?>
-                            <a class="btn btn-primary btn-sm" href="explosive/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              Take Action
+                            <a class="badge badge-pill badge-success mb-1" href="explosive/detail.php?dd=<?php echo $row_d['id'] ?>">
+                            NOC Issued
+                            </a><br>
+                            <a class="btn btn-sm btn-primary" href="explosive/detail.php?dd=<?php echo $row_d['id'] ?>">
+                              View Detail
                             </a>
                           <?php
                             break;
-                          case $isDC:
+                          case $isNOC == 2:
                           ?>
-                            <a class="badge badge-pill badge-warning" href="explosive/detail.php?dd=<?php echo $row_d['id'] ?>">
-                              Forwaded To DC
+                            <a class="badge badge-pill badge-dark" href="explosive/detail.php?dd=<?php echo $row_d['id'] ?>">
+                              NOC Rejected
                             </a>
+                            <?php
+                                    break;
+                                case $isHome:
+                                ?>
+                                    <a class="badge badge-pill badge-info" href="explosive/detail.php?dd=<?php echo $row_d['id'] ?>">
+                                    Forwarded to Home Department
+                                    </a>
                           <?php
                             break;
                           default:
