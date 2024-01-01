@@ -32,16 +32,18 @@ if ($_POST) {
     $quality_req = $_POST['quality_req'];
     $address_loc = $_POST['address_loc'];
     $project_loc = $_POST['project_loc'];
+    $licence_type =  $_POST['licence_type'];
+
     $sql = "INSERT INTO licence (
         company_name , contractor_name, owner_cnic,
         contractor_cnic, company_reg, project_name,
-        dept_name, quality_req, address_loc, project_loc,attachments
+        dept_name, quality_req, address_loc, project_loc,attachments,licence_type
     ) VALUES (
         '$company_name',
         '$contractor_name', '$owner_cnic', 
         '$contractor_cnic', 
         '$company_reg','$project_name','$dept_name',
-        '$quality_req','$address_loc','$project_loc','$attachmentsString'
+        '$quality_req','$address_loc','$project_loc','$attachmentsString','$licence_type'
     )";
 
     if ($conn->query($sql) === TRUE) {

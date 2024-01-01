@@ -61,7 +61,13 @@
                         <th style="width: 70%;"> <?php echo "LIC_" . $row_d['id'] ?></th>
                     </thead>
                     <tbody>
+                    <tr>
+                            <th> Licence Type:</th>
+                            <td id="licence_type" name="licence_type">
+                                <?php echo $row_d['licence_type'] ?>
+                            </td>
 
+                        </tr>
                         <tr>
                             <th> Company Name:</th>
                             <td id="company_name" name="company_name">

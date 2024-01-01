@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-       
         .imagePreview {
             width: 100%;
             height: 180px;
@@ -45,8 +44,6 @@
             cursor: pointer;
             color: black
         }
-
-
     </style>
 </head>
 
@@ -58,6 +55,16 @@
             <h1 class="mb-4 text-center">DC Office
             </h1>
             <form id="myForm" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="form-group col-sm-3">
+                        <label for="licence_type">Licence Type:</label>
+                        <select class="form-control" id="licence_type" name="licence_type" onchange="updateApprovedQuantity()">
+                            <option value="EL 03 & 04">EL 03 & 04</option>
+                            <option value="EL06 (Transporter)">EL06 (Transporter)</option>
+                            <option value="Blaster">Blaster</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="row">
 
                     <div class="form-group col">
@@ -116,64 +123,64 @@
                         <input type="text" required class="form-control form-control-lg" id="project_loc" name="project_loc">
                     </div>
                 </div>
-    
-        <div class="row">
-        <div class="form-group col imgUp">
-            <label >Attachment 1:</label>
-                <div class="imagePreview"></div>
-                <label class="btn btn-primary">Upload<input required type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
-            </div>
 
-            <div class="form-group col imgUp">
-            <label >Attachment 2:</label>
-                <div class="imagePreview"></div>
-                <label class="btn btn-primary">Upload<input required type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
-            </div>
+                <div class="row">
+                    <div class="form-group col imgUp">
+                        <label>Attachment 1:</label>
+                        <div class="imagePreview"></div>
+                        <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+                    </div>
 
-            <div class="form-group col imgUp">
-            <label >Attachment 3:</label>
-                <div class="imagePreview"></div>
-                <label class="btn btn-primary">Upload<input required type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
-            </div>
+                    <div class="form-group col imgUp">
+                        <label>Attachment 2:</label>
+                        <div class="imagePreview"></div>
+                        <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+                    </div>
 
-            <div class="form-group col imgUp">
-            <label >Attachment 4:</label>
-                <div class="imagePreview"></div>
-                <label class="btn btn-primary">Upload<input required type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
-            </div>
+                    <div class="form-group col imgUp">
+                        <label>Attachment 3:</label>
+                        <div class="imagePreview"></div>
+                        <label class="btn btn-primary">Upload<input type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+                    </div>
 
-            <div class="form-group col imgUp">
-            <label>Attachment 5:</label>
-                <div class="imagePreview"></div>
-                <label class="btn btn-primary">Upload<input required type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
-            </div>
-    
-            <div class="text-center col-sm-12 d-flex justify-content-center">
-                <button id="submitBtn" type="submit" class="btn btn-primary btn-lg text-center">Submit</button>
-            </div>
+                    <div class="form-group col imgUp">
+                        <label>Attachment 4:</label>
+                        <div class="imagePreview"></div>
+                        <label class="btn btn-primary">Upload<input  type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+                    </div>
+
+                    <div class="form-group col imgUp">
+                        <label>Attachment 5:</label>
+                        <div class="imagePreview"></div>
+                        <label class="btn btn-primary">Upload<input  type="file" name="userfile[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+                    </div>
+
+                    <div class="text-center col-sm-12 d-flex justify-content-center">
+                        <button id="submitBtn" type="submit" class="btn btn-primary btn-lg text-center">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        </form>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        $(function() {
-            $(document).on("change", ".uploadFile", function() {
-                var uploadFile = $(this);
-                var files = !!this.files ? this.files : [];
-                if (!files.length || !window.FileReader) return; 
-                if (/^image/.test(files[0].type)) {
-                    var reader = new FileReader(); 
-                    reader.readAsDataURL(files[0]); 
-                    reader.onloadend = function() { 
-                        uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url(" + this.result + ")");
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            $(function() {
+                $(document).on("change", ".uploadFile", function() {
+                    var uploadFile = $(this);
+                    var files = !!this.files ? this.files : [];
+                    if (!files.length || !window.FileReader) return;
+                    if (/^image/.test(files[0].type)) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(files[0]);
+                        reader.onloadend = function() {
+                            uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url(" + this.result + ")");
+                        }
                     }
-                }
 
+                });
             });
-        });
-    </script>
+        </script>
 </body>
 
 </html>
